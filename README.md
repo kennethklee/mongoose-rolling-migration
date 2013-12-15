@@ -16,7 +16,11 @@ install
 
     `npm install -save mongoose-rolling-migration`
 
-2.  Install the migrate plugin on your schemas.
+2.  Install mongoose rolling migration globally. (For command line)
+
+    `npm install -g mongoose-rolling-migration`
+
+3.  Install the migrate plugin on your schemas.
 
     ```
     var migratePlugin = require('mongose-rolling-migration');
@@ -31,7 +35,7 @@ install
 
     This plugin adds a new field, `__m`, to your schema to track the record's migration version.
 
-3.  Initialize migration tracking in your code. In a CLI:
+#.  Initialize migration tracking in your code. In a CLI:
 
     `migrate init`
 
