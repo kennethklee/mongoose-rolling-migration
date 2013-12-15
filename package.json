@@ -6,6 +6,9 @@
     "node": ">=0.8.x"
   },
   "main": "./lib/migrate.js",
+  "bin": {
+    "migrate": "./bin/migrate"
+  },
   "scripts": {
     "pretest": "./node_modules/jshint/bin/jshint lib test",
     "test": "NODE_ENV=test ./node_modules/cover/bin/cover run ./node_modules/mocha/bin/_mocha && ./node_modules/cover/bin/cover report html"
