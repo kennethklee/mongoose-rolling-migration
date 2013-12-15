@@ -17,5 +17,10 @@
   "author": "Kenneth Lee <kennethkl@gmail.com",
   "bugs": {
     "url": "https://github.com/Konquest/mongoose-rolling-migration/issues"
+  },
+  "devDependencies": {
+    "cover": "~0.2.9",
+    "mocha": "~1.15.1",
+    "jshint": "~2.3.0"
   }
 }
