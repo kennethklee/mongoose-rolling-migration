@@ -35,7 +35,7 @@ install
 
     This plugin adds a new field, `__m`, to your schema to track the record's migration version.
 
-#.  Initialize migration tracking in your code. In a CLI:
+4.  Initialize migration tracking in your code. In a CLI:
 
     `migrate init`
 
