@@ -1,4 +1,5 @@
-lib-cov
+.coverage_data/
+cover_html/
 *.seed
 *.log
 *.csv
@@ -13,3 +14,5 @@ results
 
 npm-debug.log
 node_modules
+
+migrations/
