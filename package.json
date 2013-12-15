@@ -1,0 +1,21 @@
+{
+  "name": "mongoose-rolling-migration",
+  "version": "0.0.0",
+  "description": "mongoose-rolling-migration ==========================",
+  "main": "./lib/migrate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Konquest/mongoose-rolling-migration.git"
+  },
+  "keywords": [
+    "mongoose",
+    "migration"
+  ],
+  "author": "Kenneth Lee <kennethkl@gmail.com",
+  "bugs": {
+    "url": "https://github.com/Konquest/mongoose-rolling-migration/issues"
+  }
+}
