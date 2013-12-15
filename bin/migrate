@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 function abort() {
     echo $* ; exit 1
 }
@@ -12,10 +13,14 @@ function display() {
     echo -e "\n-->" $*
 }
 
+function abortIfNotAppPath() {
+    [ -f "./package.json" ] || abort "Must be run in application directory."
+}
+
 case "$1" in
 
     init)
-        [ -f "./package.json" ] || abort "Must be run in application directory."
+        abortIfNotAppPath
         [ ! -d "./migrations" ] || abort "Migrations already exist."
 
         display Initializing migrations...
@@ -37,7 +42,7 @@ EOF
         ;;
 
     destroy)
-        [ -f "./package.json" ] || abort "Must be run in application directory."
+        abortIfNotAppPath
         read -p "Are you sure you want to permanently delete ALL migrations? [n] " -n 1 -r
         echo
         [[ ! "$REPLY" =~ ^[Yn]$ ]] || abort "Aborting"
@@ -47,22 +52,22 @@ EOF
         ;;
 
     create)
-        [ -f "./package.json" ] || abort "Must be run in application directory."
+        abortIfNotAppPath
         [ $# -eq 4 ] || abort "Create requires 4 parameters: migrate create <table> <label>"
         ;;
 
     up)
-        [ -f "./package.json" ] || abort "Must be run in application directory."
+        abortIfNotAppPath
         [ $# -eq 3 ] || abort "Up requires 3 parameters: migrate up <table>"
         ;;
 
     down)
-        [ -f "./package.json" ] || abort "Must be run in application directory."
+        abortIfNotAppPath
         [ $# -eq 3 ] || abort "Down requires 3 parameters: migrate up <table>"
         ;;
 
     reset)
-        [ -f "./package.json" ] || abort "Must be run in application directory."
+        abortIfNotAppPath
         [ $# -eq 3 ] || abort "Reset requires 3 parameters: migrate up <table>"
         ;;
 
