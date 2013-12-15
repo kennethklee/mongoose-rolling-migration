@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Konquest/mongoose-rolling-migration.git"
+    "url": "git://github.com/kennethklee/mongoose-rolling-migration.git"
   },
   "keywords": [
     "mongoose",
@@ -23,7 +23,7 @@
   ],
   "author": "Kenneth Lee <kennethkl@gmail.com",
   "bugs": {
-    "url": "https://github.com/Konquest/mongoose-rolling-migration/issues"
+    "url": "https://github.com/kennethklee/mongoose-rolling-migration/issues"
   },
   "devDependencies": {
     "cover": "~0.2.9",
