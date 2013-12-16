@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "mongoose": "~3.8.2",
-    "slug": "~0.4.0"
+    "slug": "~0.4.0",
+    "yaml": "~0.2.3"
   }
 }
