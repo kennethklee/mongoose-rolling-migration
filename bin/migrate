@@ -1,5 +1,7 @@
 #!/bin/bash
 
+INDEX_FILE=$(dirname $0)/../lib/node_modules/mongoose-rolling-migration/templates/index.js
+
 function abort() {
     echo $* ; exit 1
 }
@@ -29,8 +31,11 @@ case "$1" in
         display Initializing migrations...
         (
             mkdir -p ./migrations
+
             echo {} > ./migrations/versions.json
             echo "Created ./migrations/.versions.json"
+
+            cp $INDEX_FILE ./migrations/index.js
         ) | indent
 
         display Ready to migrate.
