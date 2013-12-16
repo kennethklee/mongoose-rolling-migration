@@ -1,5 +1,6 @@
 .coverage_data/
 cover_html/
+*.swp
 *.seed
 *.log
 *.csv
