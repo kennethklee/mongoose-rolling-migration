@@ -1,9 +1,11 @@
 // Migrate a record forward
-exports.up = function(data, done) {
-    done();
+exports.up = function(data) {
+    // ... data.xxx = 123;
+    return data;
 };
 
 // Rollback record
 exports.down = function(data, done) {
-    done();
+    // ... data.xxx = undefined;
+    return data;
 };
