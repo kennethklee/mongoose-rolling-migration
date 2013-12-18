@@ -23,7 +23,7 @@ install
 3.  Install the migrate plugin on your schemas.
 
     ```
-    var migrations = require('./migrations');
+    var migrations = require('./migrations');   // The migrations path
     var migratePlugin = require('mongose-rolling-migration')(migrations);
 
     var UserSchema = new mongoose.Schema({
