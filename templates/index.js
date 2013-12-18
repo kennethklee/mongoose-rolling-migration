@@ -4,12 +4,18 @@
  */
 var fs = require('fs');
 
+/**
+ * List all migration files.
+ */
 exports.list = function(tableName) {
     return fs.readdirSync(__dirname).filter(function(fileName) {
         return fileName.match(new RegExp('^' + tableName));
     }).sort();
 };
 
+/**
+ * Provide a hash of files by version.
+ */
 exports.listByVersion = function(tableName) {
     var list = exports.list(tableName);
 
@@ -22,6 +28,9 @@ exports.listByVersion = function(tableName) {
     }, {});
 }
 
+/**
+ * Returns a single migration file
+ */
 exports.getVersion = function(tableName, version) {
     var paddedVersion = String('0000' + version).slice(-4);
 
