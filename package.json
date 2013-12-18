@@ -5,7 +5,7 @@
   "engines": {
     "node": ">=0.8.x"
   },
-  "main": "./lib/migrate.js",
+  "main": "./lib/plugin.js",
   "bin": {
     "migrate": "./bin/migrate"
   },
@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "mongoose": "~3.8.2",
-    "slug": "~0.4.0"
+    "slug": "~0.4.0",
+    "async": "~0.2.9"
   }
 }

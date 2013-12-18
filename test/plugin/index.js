@@ -1,13 +1,10 @@
 var mocha = require('mocha'),
     mongoose = require('mongoose'),
-    helper = require('./helper'),
-    migrate = require('../../');
+    schema = mongoose.schema,
+    plugin = require('../../lib/plugin');
 
 
-describe('Integration:', function() {
-    before(function(done) {
-        helper.start(done);
-    });
+describe('Plugin', function() {
 
     describe('Model.migrate', function() {
         it.skip('should migrate the current model', function(done) {

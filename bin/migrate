@@ -32,7 +32,7 @@ case "$1" in
         (
             mkdir -p ./migrations
 
-            echo {} > ./migrations/versions.json
+            echo {} > ./migrations/.versions.json
             echo "Created ./migrations/.versions.json"
 
             cp $INDEX_FILE ./migrations/index.js
@@ -47,10 +47,12 @@ case "$1" in
         abortIfNotAppPath
         [ -d "./migrations" ] || abort "Migrations does not exist."
 
-        echo
-        read -p "Are you sure you want to permanently delete ALL migrations? [n] " -n 1 -r
-        echo
-        [[ ! "$REPLY" =~ ^[Yn]$ ]] || abort "Aborting"
+        if [ ! "$2" == "-q" ]; then
+            echo
+            read -p "Are you sure you want to permanently delete ALL migrations? [n] " -n 1 -r
+            echo
+            [[ ! "$REPLY" =~ ^[Yn]$ ]] || abort "Aborting"
+        fi
 
         rm -rf ./migrations
         echo "Permanently deleted migrations."
