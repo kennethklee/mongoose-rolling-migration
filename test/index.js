@@ -3,7 +3,7 @@ var async = require('async'),
     exec = require('child_process').exec,
     helpers = require('./helpers');
 
-describe('', function() {
+describe('Rolling Migration', function() {
     before(function(done) {
         async.parallel([
             helpers.start,

@@ -8,6 +8,11 @@ This plugin allows you to migrate your large mongo tables as you go. Whenever yo
 Warning: If you process large amounts of data at once, the migration may take some time. In this case, you may want to use a background process to migrate all data.
 
 
+requirements
+------------
+
+*  mongo server
+
 
 install
 -------
