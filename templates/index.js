@@ -19,8 +19,6 @@ exports.list = function(tableName) {
 exports.listByVersion = function(tableName) {
     var list = exports.list(tableName);
 
-    console.log(list);
-
     return list.reduce(function(prev, value, index) {
         var version = parseInt(value.match(/-(\d{4})-/)[1]);
         prev[version] = value;
