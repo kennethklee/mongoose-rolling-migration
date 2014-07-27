@@ -13,6 +13,7 @@ describe('CLI', function() {
     });
 
     it.skip('should migrate to latest', function(done) {
+        //cli.up('')
     });
 
     it.skip('should rollback', function(done) {
