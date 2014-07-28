@@ -21,7 +21,7 @@ describe('Rolling Migration', function() {
     });
 
     after(function(done) {
-        exec('./bin/migrate destroy -q', {cwd: process.cwd()}, function(data) {
+        exec('./bin/migrate clean -q', {cwd: process.cwd()}, function(data) {
             done();
         });
     });

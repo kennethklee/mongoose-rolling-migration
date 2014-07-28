@@ -44,7 +44,7 @@ case "$1" in
         echo
         ;;
 
-    destroy)
+    clean)
         abortIfNotAppPath
         [ -d "./migrations" ] || abort "Migrations does not exist."
 
@@ -69,42 +69,25 @@ case "$1" in
         cli create $2 $3
         ;;
 
-    up)
+    destroy)
         abortIfNotAppPath
         [ -d "./migrations" ] || abort "Migrations does not exist. Please use 'migrate init' first."
-        [ $# -eq 2 ] || abort "Up requires 1 parameters: migrate up <table>"
+        [ $2 == "last" ] || abort "Require last: migrate destroy last <table>"
+        [ $# -eq 3 ] || abort "Destroy Last requires 1 parameter: migrate destroy last <table>"
 
-        cli up $2
+        cli destroy 1 $3
         ;;
-
-    down)
-        abortIfNotAppPath
-        [ -d "./migrations" ] || abort "Migrations does not exist. Please use 'migrate init' first."
-        [ $# -eq 2 ] || abort "Down requires 1 parameters: migrate up <table>"
-
-        cli down $2
-        ;;
-
-    reset)
-        abortIfNotAppPath
-        [ -d "./migrations" ] || abort "Migrations does not exist. Please use 'migrate init' first."
-        [ $# -eq 2 ] || abort "Reset requires 1 parameters: migrate up <table>"
-
-        cli reset $2
-        ;;
-
+    
     *)
         echo "Usage: migrate <command>"
         echo
         echo "Commands (Init/Destroy)"
         echo "init          initialize migrations"
-        echo "destroy       destroy migrations (permanent)"
+        echo "clean         clean all migrations (permanent)"
         echo
         echo "Commands (General Usage)"
-        echo "create <table> <label>    create a new migration script"
-        echo "up <table>                update <table> to latest version"
-        echo "down <table>              rollback <table> once"
-        echo "reset <table>             completely rollback <table>"
+        echo "create <table> <label>  create a new migration script"
+        echo "destroy last <table>    destroy the last migration script"
         echo
         ;;
 
