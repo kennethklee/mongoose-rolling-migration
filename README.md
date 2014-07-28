@@ -115,18 +115,9 @@ db.User
     });
 ```
 
-#### Migrating All at Once
+#### Migrate from Server
 
-This is for getting the latest data while developing or doing a background batch process. You can do this by command line with the following:
-
-`migrate up <table name>`
-
-Example:
-`migrate up users`
-
-Migration will pull up the Users table and update each record to the latest version.
-
-Alternatively, you can migrate via node; this is similar to migrating as you go.
+You can migrate via the server; this is similar to migrating as you go.
 
 ```
 db.User
